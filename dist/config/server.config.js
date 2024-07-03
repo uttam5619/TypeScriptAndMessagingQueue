@@ -12,6 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.StartServer = void 0;
 const express_1 = __importDefault(require("express"));
 const serverInstance = (0, express_1.default)();
 const StartServer = () => __awaiter(void 0, void 0, void 0, function* () {
@@ -20,4 +21,4 @@ const StartServer = () => __awaiter(void 0, void 0, void 0, function* () {
         console.log(`server listening on ${port}`);
     });
 });
-exports.default = StartServer;
+exports.StartServer = StartServer;

@@ -5,6 +5,17 @@ const redisConfig = {
     host: process.env.REDIS_HOST
 }
 
-const redisConnection =  new Redis(redisConfig)
+const connectRedis =() => {
 
-export default redisConnection
+    const redisConnectionInstance =  new Redis(redisConfig)
+    redisConnectionInstance.on('connect',()=>{
+        console.log(`Successfully connected to Redis`)
+    })
+    redisConnectionInstance.on('error',(error)=>{
+        console.log(`failed to connect to Redis`)
+        console.log(`Redis connection error:${error.message}`)
+    })
+    
+}
+
+export default connectRedis
